@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import { Card, Avatar } from 'antd';
+import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import 'antd/dist/antd.css'
+
+const { Meta } = Card;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <Card
+  style={{ width: 300 }}
+  cover={
+    <img
+      alt="example"
+      src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+    />
+  }
+  actions={[
+    <SettingOutlined key="setting" />,
+    <EditOutlined key="edit" />,
+    <EllipsisOutlined key="ellipsis" />,
+  ]}
+>
+  <Meta
+    avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+    title="Card title"
+    description="This is the description"
+  />
+</Card>
     </div>
   );
 }
